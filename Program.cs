@@ -57,17 +57,35 @@ class Program
                   }
                 ]
               }
-            ) {
-              id
-              shipper { id name }
-              auction {
-                bids {
-                  carrier { name }
-                  price
+            )
+              {
+                id
+                auction {
+                  result {
+                    carrier {
+                      id
+                      name
+                    }
+                    price
+                    labelUrl
+                    reserve
+                    shipperMessage
+                  }
+                  shippingLabels {
+                    accountNumber
+                    base64Data
+                    carrier {
+                      id
+                    }
+                    format
+                    parcelId
+                    serviceDescription
+                    serviceType
+                    sortCode
+                  }
                 }
               }
             }
-        }
         """;
 
         var requestBody = new { query };
