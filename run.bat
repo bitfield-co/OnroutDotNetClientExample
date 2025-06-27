@@ -1,0 +1,9 @@
+@echo off
+echo Restoring dependencies...
+dotnet restore
+
+echo Building the project...
+dotnet build --no-restore
+
+echo Running the program...
+dotnet run --no-build
